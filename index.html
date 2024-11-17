@@ -91,7 +91,7 @@
 
         generateKeyBtn.addEventListener('click', async () => {
             try {
-                const response = await fetch('keys.json');
+                const response = await fetch('syek.json');
                 const keys = await response.json();
                 const randomKey = keys[Math.floor(Math.random() * keys.length)];
                 keyDisplay.textContent = randomKey;

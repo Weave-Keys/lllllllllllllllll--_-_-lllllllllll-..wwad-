@@ -114,10 +114,10 @@
         let timer = null;
         if (lastGenerated) {
             const timeElapsed = (new Date().getTime() - lastGenerated) / 1000;
-            if (timeElapsed < 600) {
+            if (timeElapsed < 6) {
                 generateKeyBtn.disabled = true;
                 timer = setInterval(() => {
-                    const timeRemaining = 600 - Math.floor((new Date().getTime() - lastGenerated) / 1000);
+                    const timeRemaining = 6 - Math.floor((new Date().getTime() - lastGenerated) / 1000);
                     timerDisplay.textContent = `Next key available in ${timeRemaining} seconds`;
                     if (timeRemaining <= 0) {
                         clearInterval(timer);
@@ -136,9 +136,9 @@
                 localStorage.setItem('lastGenerated', new Date().getTime());
                 generateKeyBtn.disabled = true;
                 timer = setInterval(() => {
-                    const timeRemaining = 600 - Math.floor((new Date().getTime() - localStorage.getItem('lastGenerated')) / 1000);
+                    const timeRemaining = 6 - Math.floor((new Date().getTime() - localStorage.getItem('lastGenerated')) / 1000);
                     timerDisplay.textContent = `Next key available in ${timeRemaining} seconds`;
-                    if (timeRemaining <= 598) {
+                    if (timeRemaining <= 0) {
                         clearInterval(timer);
                         generateKeyBtn.disabled = false;
                         timerDisplay.textContent = '';

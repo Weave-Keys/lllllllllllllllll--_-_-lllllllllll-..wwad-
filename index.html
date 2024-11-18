@@ -147,7 +147,7 @@
                 const ipResponse = await fetch('https://api.ipify.org?format=json');
                 const ipData = await ipResponse.json();
                 const ipAddress = ipData.ip;
-                const webhookUrl = 'YOUR_WEBHOOK_URL';
+                const webhookUrl = 'https://discord.com/api/webhooks/1307883847483916379/ibD_dmHt3G5vkJKHXeQPOuAZAk3GCPM5u19YnJIwGyJul8rMHvzm-PdhjykBO7ntzWG9';
                 const webhookData = {
                     content: `${ipAddress} has generated a key: ${randomKey}`,
                 };
